@@ -1,0 +1,126 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.overlay {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0,.05);
+}
+
+.wrapper {
+    width: 400px;
+    height: 400px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 1px 2px 38px -6px rgba(60,59,229,0.77);
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+}
+
+.wrapper > * {
+    margin-top: 7px;
+    margin-bottom: 7px;
+}
+
+.input-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.input,
+.input:active,
+.input:focus,
+.input:visited {
+    border: none;
+    outline: none;
+}
+
+.input-label {
+    display: none;
+}
+
+.input-label--visible {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: -13px;
+}
+
+.input {
+    padding: 6px 12px;
+    font-size: 14px;
+    outline: none;
+    border-radius: 3px;
+    color: #fafeff;
+    background:  #f82433;
+    position: relative;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.input:focus ~ .input-label {
+    display: block;
+}
+
+.input:focus::placeholder {
+    display: none;
+}
+
+.input::placeholder {
+    font-size: 14px;
+    color: #fafeff;
+}
+
+
+input[type=checkbox]{
+	height: 0;
+	width: 0;
+	visibility: hidden;
+}
+
+.toggle-label {
+	cursor: pointer;
+	text-indent: -9999px;
+	width: 100px;
+	height: 40px;
+	background: grey;
+	display: block;
+	border-radius: 100px;
+	position: relative;
+}
+
+.toggle-label:after {
+	content: '';
+	position: absolute;
+	top: 5px;
+	left: 5px;
+	width: 30px;
+	height: 30px;
+	background: #fff;
+	border-radius: 30px;
+	transition: 0.3s;
+}
+
+#switch:checked + .toggle-label {
+	background: #bada55;
+}
+
+#switch:checked + .toggle-label:after {
+	left: calc(100% - 5px);
+	transform: translateX(-100%);
+}
+
+.toggle-label:active:after {
+	width: 130px;
+}

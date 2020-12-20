@@ -1,0 +1,40 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>   	 	
+	<head>   		 		
+		<meta http-equiv="content-type" content="text/html; charset=utf-8">     		 		
+		<title>PV Access: Javascript</title>  		 
+        <script src="/PV_Access.js"></script>
+        <link rel="stylesheet" href="./style.css">
+	</head>   	 	
+	<body>		
+        <div class="overlay"></div>
+        <div class="wrapper">
+            <div class="input-wrapper">
+                <label for="Variable" class="input-label">Wpisz nazwę zmiennej</label>
+                <input
+                    id="Variable"
+                    class="input"
+                    name="Variable"
+                    placeholder="Wpisz nazwę zmiennej"
+                />
+            </div>
+            <div class="input-wrapper">
+                <label for="Value" class="input-label">Wpisz wartość zmiennej</label>
+                <input
+                    id="Value"
+                    class="input"
+                    name="Value"
+                    placeholder="Wpisz wartość zmiennej"
+                />
+            </div>
+    
+            <button onclick="pvAccess.WritePV(document.getElementById('Variable').value, document.getElementById('Value').value );">Write PV </button>	
+            <button onclick="pvAccess.ReadPV(document.getElementById('Variable').value, document.getElementById('Value') );">Read PV </button>
+        
+        
+            <input type="checkbox" id="switch"/><label class="toggle-label" for="switch">Toggle</label>
+        </div>
+    </body>
+    
+    <script src="./index.js"></script>
+</html>
